@@ -34,7 +34,7 @@ class ListViewBuilder extends StatelessWidget {
             tag: 'eco_drive',
             child: Image.asset('assets/images/eco_drive.png')),
           centerTitle: true,
-          title: const Text("Eco Drive")),
+          title: const Text("Eco Drive",style: TextStyle(fontFamily:'Tektur',fontWeight: FontWeight.bold,fontSize: 25),)),
       body: StreamBuilder(
         stream: db.collection('vehicles').snapshots(),
         builder: (context, snapshot){
@@ -51,7 +51,7 @@ class ListViewBuilder extends StatelessWidget {
               padding: EdgeInsets.all(5),
               child: Row(
                 children: [
-                  Image(width: 60, height: 60,image:NetworkImage(doc.data()!['type'])),
+                  Image(width: 60, height: 60,image:NetworkImage(doc.data()['type'])),
                   //  Icon(Icons.bike_scooter_sharp,size:40),
                   Container(
                     width: mq.width * .8,
@@ -61,8 +61,8 @@ class ListViewBuilder extends StatelessWidget {
                         decoration:BoxDecoration(
                           borderRadius: BorderRadius.circular(7),
                            // color: color,
-                        color: doc.data()!['mileage'] > 15 && doc.data()!['age'] < 5 ? Colors.green :
-                        doc.data()!['mileage'] >= 15 && doc.data()!['age'] >5 ? Colors.amber : Colors.red,),
+                        color: doc.data()['mileage'] > 15 && doc.data()['age'] < 5 ? Colors.green :
+                        doc.data()['mileage'] >= 15 && doc.data()['age'] >5 ? Colors.amber : Colors.red,),
 
                         padding: EdgeInsets.symmetric(horizontal: 10,vertical: 4),
                         child: Row(
@@ -71,18 +71,18 @@ class ListViewBuilder extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(doc.data()!['name'],style: TextStyle(fontSize: 20 ,fontWeight: FontWeight.w600),),
+                                Text(doc.data()['name'],style: TextStyle(fontSize: 20 ,fontWeight: FontWeight.w600),),
                                 SizedBox(height: 5,),
-                                Text("Year :${doc.data()!['age']}",style: TextStyle(fontSize: 15 ,fontWeight: FontWeight.w500)),
+                                Text("Year :${doc.data()['age']}",style: TextStyle(fontSize: 15 ,fontWeight: FontWeight.w500)),
                                 SizedBox(height: 5,),
 
                               ],),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text("Mileage : ${doc.data()!['mileage']}",style: TextStyle(fontSize: 15 ,fontWeight: FontWeight.w500)),
+                                Text("Mileage : ${doc.data()['mileage']}",style: TextStyle(fontSize: 15 ,fontWeight: FontWeight.w500)),
                                 SizedBox(height: 5,),
-                                Text("Condition : ${doc.data()!['condition']}",style: TextStyle(fontSize: 15 ,fontWeight: FontWeight.w500)),
+                                Text("Condition : ${doc.data()['condition']}",style: TextStyle(fontSize: 15 ,fontWeight: FontWeight.w500)),
                                 SizedBox(height: 5,),
                               ],),
                           ],

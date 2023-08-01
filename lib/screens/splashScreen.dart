@@ -39,7 +39,6 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent.withOpacity(_animationController.value),
-      appBar: null,
       //body
       body: Stack(children: [
         //app logo
@@ -58,7 +57,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             child: const Text('Find your ECO-DRIVE',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 20, color: Colors.black87, letterSpacing: .5))),
+                  fontFamily:'Tektur',
+                    fontSize: 25, color: Colors.black87, letterSpacing: 1))),
       ]),
     );
   }

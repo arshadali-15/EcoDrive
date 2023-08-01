@@ -26,7 +26,7 @@ class VehicleListWiget extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(vehicle.name,style: TextStyle(fontSize: 20 ,fontWeight: FontWeight.w600),),
+                        Text(vehicle.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
                         SizedBox(height: 5,),
                         Text("Year :${vehicle.age}",style: TextStyle(fontSize: 15 ,fontWeight: FontWeight.w500)),
                         SizedBox(height: 5,),
